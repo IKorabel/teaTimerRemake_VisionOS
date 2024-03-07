@@ -12,6 +12,7 @@
 		A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD78B2B9A161D008AE12E /* Item.swift */; };
 		A2ADD78E2B9A161E008AE12E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2ADD78D2B9A161E008AE12E /* Assets.xcassets */; };
 		A2ADD7912B9A161E008AE12E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2ADD7902B9A161E008AE12E /* Preview Assets.xcassets */; };
+		A2ADD79A2B9A167F008AE12E /* ViewModel-Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7992B9A167F008AE12E /* ViewModel-Pattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		A2ADD78B2B9A161D008AE12E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A2ADD78D2B9A161E008AE12E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2ADD7902B9A161E008AE12E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A2ADD7992B9A167F008AE12E /* ViewModel-Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-Pattern.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,8 @@
 		A2ADD7862B9A161D008AE12E /* TeaTimerRemakeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				A2ADD7972B9A1636008AE12E /* Helpers */,
 				A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */,
-				A2ADD7892B9A161D008AE12E /* ContentView.swift */,
-				A2ADD78B2B9A161D008AE12E /* Item.swift */,
 				A2ADD78D2B9A161E008AE12E /* Assets.xcassets */,
 				A2ADD78F2B9A161E008AE12E /* Preview Content */,
 			);
@@ -68,6 +69,24 @@
 				A2ADD7902B9A161E008AE12E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A2ADD7972B9A1636008AE12E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADD7982B9A1666008AE12E /* SwiftDataExample */,
+				A2ADD7992B9A167F008AE12E /* ViewModel-Pattern.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A2ADD7982B9A1666008AE12E /* SwiftDataExample */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADD7892B9A161D008AE12E /* ContentView.swift */,
+				A2ADD78B2B9A161D008AE12E /* Item.swift */,
+			);
+			path = SwiftDataExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +162,7 @@
 				A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */,
 				A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */,
 				A2ADD7882B9A161D008AE12E /* TeaTimerRemakeV2App.swift in Sources */,
+				A2ADD79A2B9A167F008AE12E /* ViewModel-Pattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +311,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IK.Shefer.TeaTimerRemakeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -320,9 +343,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IK.Shefer.TeaTimerRemakeV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Release;
 		};

@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct TeaTimerRemakeV2App: App {
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
