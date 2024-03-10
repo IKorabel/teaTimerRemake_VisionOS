@@ -26,7 +26,7 @@ struct TeaTimerRemakeV2App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TeaSelectionView(viewModel: .init(state: .init()))
         }
         .modelContainer(sharedModelContainer)
     }
