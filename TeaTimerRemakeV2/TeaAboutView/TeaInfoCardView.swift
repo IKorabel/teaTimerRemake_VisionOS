@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct TeaInfoCardView: View {
+    var teaProperty: TeaProperty
+    
     var body: some View {
-        ZStack {
-            Color.init(uiColor: .tertiarySystemGroupedBackground).ignoresSafeArea()
-            cardViewContent
-        }
+        cardViewContent
         .frame(width: 120, height: 116)
-        .clipShape(.rect(cornerRadius: 20))
+        .background(.thinMaterial, in: .rect(cornerRadius: 20))
     }
     
     private var cardViewContent: some View {
         VStack(spacing: 10) {
-            Image(systemName: "mappin.circle.fill")
+            Image(systemName: teaProperty.iconName)
                 .font(.system(size: 48))
                 .foregroundStyle(Color.red)
-            Text("Pin")
+                .symbolRenderingMode(.multicolor)
+            Text(teaProperty.name)
                 .bold()
-                .font(.system(size: 20))
+                .font(.system(size: 14))
         }
+        .frame(width: 120, height: 116)
+        .background(.thinMaterial, in: .rect(cornerRadius: 20))
+        
     }
 }
 
 #Preview {
-    TeaInfoCardView()
+    TeaInfoCardView(teaProperty: .init(name: "Pin", iconName: "mappin.circle.fill"))
 }

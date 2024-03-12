@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct TeaSelectionCardView: View {
-    var tea: TeaSelectionViewFeature.Tea
+    var tea: Tea
     
+    var isVisionOs: Bool {
+       #if os(visionOS)
+           return true
+        #else
+           return false
+        #endif
+    }
     var teaSelectionCardViewAction: (TeaSelectionViewFeature.CallbackAction) -> Void
     
     var body: some View {
@@ -35,17 +42,37 @@ struct TeaSelectionCardView: View {
     }
     
     @ViewBuilder private func teaInteractionButtons() -> some View {
-        VStack(alignment: .leading) {
-            HStack(spacing: 10) {
-                TTStyleButton(title: "Add to your list", systemImage: "plus.circle.fill", backgroundColor: .blue) {
-                    teaSelectionCardViewAction(.addTeaToList)
+        if isVisionOs {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 10) {
+                    Button(action: { teaSelectionCardViewAction(.addTeaToList)}, label: {
+                        Label("Add to your list", systemImage: "plus.circle.fill")
+                            .foregroundStyle(Color.white)
+                    })
+                    .buttonBorderShape(.capsule)
+                    .buttonStyle(.bordered)
+                    
+                    Button(action: { teaSelectionCardViewAction(.readAboutTea)}, label: {
+                        Label("About", systemImage: "info.circle.fill")
+                    })
                 }
-                TTStyleButton(title: "About", systemImage: "info.circle.fill", backgroundColor: .purple) {
-                    teaSelectionCardViewAction(.readAboutTea)
-                }
+                Button(action: { teaSelectionCardViewAction(.brewTea)}, label: {
+                    Label("Brew a tea", systemImage: "flame.fill")
+                })
             }
-            TTStyleButton(title: "Brew a tea", systemImage: "info", backgroundColor: .green) {
-                teaSelectionCardViewAction(.brewTea)
+        } else {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 10) {
+                    TTStyleButton(title: "Add to your list", systemImage: "plus.circle.fill", backgroundColor: .blue) {
+                        teaSelectionCardViewAction(.addTeaToList)
+                    }
+                    TTStyleButton(title: "About", systemImage: "info.circle.fill", backgroundColor: .purple) {
+                        teaSelectionCardViewAction(.readAboutTea)
+                    }
+                }
+                TTStyleButton(title: "Brew a tea", systemImage: "info", backgroundColor: .ttGreen) {
+                    teaSelectionCardViewAction(.brewTea)
+                }
             }
         }
     }
@@ -59,7 +86,7 @@ struct TeaSelectionCardView: View {
 }
 
 #Preview {
-    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green)) { action in
+    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green, teaInformation: .init(teaName: "tea", teaImageName: "", teaProperties: []))) { action in
         switch action {
         case .addTeaToList:
             print("add")

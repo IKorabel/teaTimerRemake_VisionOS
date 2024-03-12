@@ -5,6 +5,7 @@
 //  Created by Igor Shefer on 07.03.24.
 //
 
+import RealityKit
 import Foundation
 import SwiftUI
 

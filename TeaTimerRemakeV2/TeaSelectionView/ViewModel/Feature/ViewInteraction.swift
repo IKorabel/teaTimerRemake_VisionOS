@@ -12,7 +12,9 @@ import Foundation
 extension TeaSelectionViewFeature {
     
     enum ViewAction {
-        
+        case didClickOnInfoButton
+        case didSelectTeaInList
+        case didScrollTeaPage(newTeaPageId: Tea.ID)
     }
     
     enum CallbackAction {

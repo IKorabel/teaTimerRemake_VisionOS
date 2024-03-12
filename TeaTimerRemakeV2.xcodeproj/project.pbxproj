@@ -26,6 +26,13 @@
 		A2ADD7B82B9B552B008AE12E /* TeaAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7B72B9B552B008AE12E /* TeaAboutView.swift */; };
 		A2ADD7BA2B9B554A008AE12E /* TeaInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7B92B9B554A008AE12E /* TeaInfoCardView.swift */; };
 		A2ADD7BD2B9E233E008AE12E /* TeaAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7BC2B9E233E008AE12E /* TeaAboutViewModel.swift */; };
+		A2ADD7BF2B9E2389008AE12E /* TeaAboutViewModelFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7BE2B9E2389008AE12E /* TeaAboutViewModelFeature.swift */; };
+		A2ADD7C22B9E2441008AE12E /* TeaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7C12B9E2441008AE12E /* TeaInfo.swift */; };
+		A2ADD7C42B9E26CA008AE12E /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7C32B9E26CA008AE12E /* Tea.swift */; };
+		A2ADD7C62B9F7C04008AE12E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7C52B9F7C04008AE12E /* Colors.swift */; };
+		A2ADD7C92B9F87F8008AE12E /* TeaSelectionSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7C82B9F87F8008AE12E /* TeaSelectionSplitView.swift */; };
+		A2ADD7CB2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7CA2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift */; };
+		A2ADD7CE2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7CD2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		A2ADD7B72B9B552B008AE12E /* TeaAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaAboutView.swift; sourceTree = "<group>"; };
 		A2ADD7B92B9B554A008AE12E /* TeaInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaInfoCardView.swift; sourceTree = "<group>"; };
 		A2ADD7BC2B9E233E008AE12E /* TeaAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaAboutViewModel.swift; sourceTree = "<group>"; };
+		A2ADD7BE2B9E2389008AE12E /* TeaAboutViewModelFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaAboutViewModelFeature.swift; sourceTree = "<group>"; };
+		A2ADD7C12B9E2441008AE12E /* TeaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaInfo.swift; sourceTree = "<group>"; };
+		A2ADD7C32B9E26CA008AE12E /* Tea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tea.swift; sourceTree = "<group>"; };
+		A2ADD7C52B9F7C04008AE12E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A2ADD7C82B9F87F8008AE12E /* TeaSelectionSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionSplitView.swift; sourceTree = "<group>"; };
+		A2ADD7CA2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionVisionProViewModel.swift; sourceTree = "<group>"; };
+		A2ADD7CD2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionVisionProFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,8 @@
 		A2ADD7862B9A161D008AE12E /* TeaTimerRemakeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				A2ADD7C72B9F878E008AE12E /* TeaSelectionView_VisionPro */,
+				A2ADD7C02B9E2417008AE12E /* Entities */,
 				A2ADD7B62B9B503A008AE12E /* TeaAboutView */,
 				A2ADD7AE2B9A3977008AE12E /* Videos */,
 				A2ADD7902B9A161E008AE12E /* Preview Assets.xcassets */,
@@ -106,6 +122,7 @@
 				A2ADD7B12B9A3A37008AE12E /* Player */,
 				A2ADD7982B9A1666008AE12E /* SwiftDataExample */,
 				A2ADD7992B9A167F008AE12E /* ViewModel-Pattern.swift */,
+				A2ADD7C52B9F7C04008AE12E /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +213,34 @@
 			isa = PBXGroup;
 			children = (
 				A2ADD7BC2B9E233E008AE12E /* TeaAboutViewModel.swift */,
+				A2ADD7BE2B9E2389008AE12E /* TeaAboutViewModelFeature.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2ADD7C02B9E2417008AE12E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADD7C12B9E2441008AE12E /* TeaInfo.swift */,
+				A2ADD7C32B9E26CA008AE12E /* Tea.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A2ADD7C72B9F878E008AE12E /* TeaSelectionView_VisionPro */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADD7CC2B9F89C4008AE12E /* ViewModel */,
+				A2ADD7C82B9F87F8008AE12E /* TeaSelectionSplitView.swift */,
+			);
+			path = TeaSelectionView_VisionPro;
+			sourceTree = "<group>";
+		};
+		A2ADD7CC2B9F89C4008AE12E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADD7CA2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift */,
+				A2ADD7CD2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,21 +316,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2ADD7C22B9E2441008AE12E /* TeaInfo.swift in Sources */,
+				A2ADD7C62B9F7C04008AE12E /* Colors.swift in Sources */,
+				A2ADD7C92B9F87F8008AE12E /* TeaSelectionSplitView.swift in Sources */,
 				A2ADD7A72B9A1A9B008AE12E /* ViewInteraction.swift in Sources */,
 				A2ADD7A02B9A1835008AE12E /* TeaSelectionView-ViewModel.swift in Sources */,
 				A2ADD7B52B9A3A88008AE12E /* VideoPlayerUIView.swift in Sources */,
+				A2ADD7CB2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift in Sources */,
 				A2ADD7BD2B9E233E008AE12E /* TeaAboutViewModel.swift in Sources */,
 				A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */,
 				A2ADD79D2B9A1803008AE12E /* TeaSelectionView.swift in Sources */,
+				A2ADD7CE2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift in Sources */,
 				A2ADD7B82B9B552B008AE12E /* TeaAboutView.swift in Sources */,
 				A2ADD7A22B9A1893008AE12E /* TeaSelectionView-ViewModelFeature.swift in Sources */,
 				A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */,
 				A2ADD7BA2B9B554A008AE12E /* TeaInfoCardView.swift in Sources */,
+				A2ADD7C42B9E26CA008AE12E /* Tea.swift in Sources */,
 				A2ADD7882B9A161D008AE12E /* TeaTimerRemakeV2App.swift in Sources */,
 				A2ADD7AD2B9A1F4C008AE12E /* TTButton.swift in Sources */,
 				A2ADD79A2B9A167F008AE12E /* ViewModel-Pattern.swift in Sources */,
 				A2ADD7A92B9A1B67008AE12E /* TeaSelectionCardView.swift in Sources */,
 				A2ADD7A52B9A1A82008AE12E /* State.swift in Sources */,
+				A2ADD7BF2B9E2389008AE12E /* TeaAboutViewModelFeature.swift in Sources */,
 				A2ADD7B32B9A3A49008AE12E /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

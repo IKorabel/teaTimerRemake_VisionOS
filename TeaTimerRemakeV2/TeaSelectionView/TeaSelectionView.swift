@@ -8,20 +8,31 @@
 import SwiftUI
 
 struct TeaSelectionView: View {
-    var viewModel: TeaSelectionViewModel
+    @StateObject var viewModel: TeaSelectionViewModel
     
     var body: some View {
         TabView {
-            ForEach(viewModel.state.teaList) { actualTeaPage in
+            ForEach(viewModel.teaList) { actualTeaPage in
                 TeaSelectionCardView(tea: actualTeaPage) { action in
-                    print("action")
+                    print("new page id: \(actualTeaPage.id)")
+                    viewModel.handleViewAction(.didScrollTeaPage(newTeaPageId: actualTeaPage.id))
+                    switch action {
+                    case .readAboutTea:
+                        viewModel.handleViewAction(.didClickOnInfoButton)
+                    case .brewTea: print("brew tea")
+                    case .addTeaToList: print("add to list")
+                    }
                 }
+                .tag(actualTeaPage.id)
                 .ignoresSafeArea()
             }
         }
         .ignoresSafeArea()
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .always))
+        .sheet(isPresented: $viewModel.state.isTeaInfoSheetPresented, content: {
+            TeaAboutView(teaInfo: viewModel.findSelectedTea()!.teaInformation)
+        })
     }
 }
 

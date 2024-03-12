@@ -26,6 +26,7 @@ class VideoPlayerUIView: UIView {
         
         playerLayer.player = player
         playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.player?.volume = 0
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playerItemDidReachEnd(notification:)),

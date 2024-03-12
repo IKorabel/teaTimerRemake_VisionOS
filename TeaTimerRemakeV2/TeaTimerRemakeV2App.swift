@@ -29,5 +29,6 @@ struct TeaTimerRemakeV2App: App {
             TeaSelectionView(viewModel: .init(state: .init()))
         }
         .modelContainer(sharedModelContainer)
+        
     }
 }

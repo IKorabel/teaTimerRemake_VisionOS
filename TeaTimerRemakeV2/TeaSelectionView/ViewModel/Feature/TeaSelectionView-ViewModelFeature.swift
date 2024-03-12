@@ -11,11 +11,5 @@ import SwiftUI
 struct TeaSelectionViewFeature {
     typealias ViewModelType = ViewModel<State, ViewAction, CallbackAction>
     
-    struct Tea: Identifiable {
-        var id = UUID()
-        var name: String
-        var bgColor: Color
-    }
-    
 }
 

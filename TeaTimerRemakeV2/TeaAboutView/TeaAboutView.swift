@@ -9,82 +9,76 @@ import SwiftUI
 
 struct TeaAboutView: View {
     
-    let spacing: CGFloat = 10
-    @State private var numberOfRows = 3
+    var viewModel: TeaAboutViewModel
+    @Environment(\.dismiss) private var dismiss
     
+    init(teaInfo: TeaInfo) {
+        self.viewModel = TeaAboutViewModel(teaInfo: teaInfo)
+    }
     var body: some View {
         
-        let columns = Array(repeating: GridItem(.adaptive(minimum: 120), spacing: spacing), count: numberOfRows)
+        let columns = Array(repeating: GridItem(.adaptive(minimum: 120), spacing: viewModel.spacing), count: viewModel.numberOfRows)
         
-        ScrollView() {
-            teaAboutHeader
-                .padding(.top, 30)
-            
-            LazyVGrid(columns: columns, spacing: spacing, pinnedViews: [.sectionHeaders], content: {
-                Section(header: categoryHeader(withHeader: "titl1")) {
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
+        NavigationStack {
+            ScrollView {
+                teaAboutHeader
+                    .padding(.top, 30)
+                
+                LazyVGrid(columns: columns, spacing: viewModel.spacing, pinnedViews: [.sectionHeaders], content: {
+                    
+                    ForEach(viewModel.teaInfo.teaProperties) { teaPropertySection in
+                        Section(header: categoryHeader(withHeader: teaPropertySection.sectionName)) {
+                            ForEach(teaPropertySection.teaProperties) { teaProperty in
+                                TeaInfoCardView(teaProperty: teaProperty)
+                            }
+                        }
+                    }
+                })
+                .padding(.horizontal)
+            }
+            .navigationTitle("Your tea")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: viewModel.isVisionOS ? "xmark" : "xmark.circle.fill")
+//                            .foregroundStyle(Color.ttGreen)
+                    }
                 }
                 
-                Section(header: categoryHeader(withHeader: "Something new")) {
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                    TeaInfoCardView()
-                }
-            })
-            .padding(.horizontal)
+            }
+            
         }
     }
     
     private var teaAboutHeader: some View {
-        VStack(spacing: 10, content: {
+        VStack(spacing: 20, content: {
             Image(systemName: "cup.and.saucer.fill")
-                .foregroundStyle(.green)
+           //     .foregroundStyle(Color.ttGreen)
                 .font(.system(size: 60))
-            Text("Shu Puerh")
+            Text(viewModel.teaInfo.teaName)
                 .font(.system(size: 24, weight: .bold))
-            Button("Brew") {
+            Button(action: {
                 
-            }
-            .buttonStyle(TTButton(backgroundColor: .green))
+            }, label: {
+                Text("Brew")
+                    .frame(maxWidth: 123, maxHeight: 10)
+            })
+            .buttonStyle(TTButton(backgroundColor: viewModel.isVisionOS ? .clear : .ttGreen))
+            //.buttonStyle(TTButton(backgroundColor: .ttGreen))
         })
     }
     
-    private var section: some View {
-        Section {
-            TeaInfoCardView()
-            TeaInfoCardView()
-                .hoverEffect()
-            TeaInfoCardView()
-        } header: {
-            Text("How does it affect the condition?")
-                .bold()
-                .font(.title)
-        }
-    }
-    
-    private func categoryHeader(withHeader: String) -> some View {
-        Text(withHeader)
+    private func categoryHeader(withHeader: String?) -> some View {
+        Text(withHeader ?? "")
             .font(.title2)
             .bold()
-            .padding()
+            .padding(.top, 20)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
 }
 
 #Preview {
-    TeaAboutView()
+    TeaAboutView(teaInfo: .init(teaName: "Shu", teaImageName: "cup.and.saucer.fill", teaProperties: [.init(section: .health, teaProperties: [.init(name: "pills", iconName: "pills.fill")])]))
 }

@@ -11,6 +11,7 @@ import Foundation
 extension TeaSelectionViewFeature {
     
     struct State {
-        var teaList: [TeaSelectionViewFeature.Tea] = [.init(name: "Shu Puerh", bgColor: .black), .init(name: "Sheng Puerh", bgColor: .green), .init(name: "Red", bgColor: .red)]
+        var isTeaInfoSheetPresented = false
+        var selectedIndex: Tea.ID?
     }
 }
