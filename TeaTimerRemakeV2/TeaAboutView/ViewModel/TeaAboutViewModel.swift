@@ -14,16 +14,17 @@ class TeaAboutViewModel: TeaAboutViewModelFeature.viewModelType {
     let spacing: CGFloat = 10
     let numberOfRows = 3
     
-    var isVisionOS: Bool {
-        #if os(visionOS) 
-        return true
-        #else
-        return false
-        #endif
-    }
     
     init(teaInfo: TeaInfo) {
         self.teaInfo = teaInfo
         super.init(state: .init())
+    }
+    
+    func dismiss(dismissAction: DismissAction, dismissWindowAction: DismissWindowAction) {
+        if isVisionOS {
+            dismissWindowAction()
+        } else {
+            dismissAction()
+        }
     }
 }

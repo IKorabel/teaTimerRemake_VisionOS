@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TeaSelectionView: View {
     @StateObject var viewModel: TeaSelectionViewModel
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.dismissWindow) private var dismissWindow
     
     var body: some View {
         TabView {
@@ -18,10 +20,19 @@ struct TeaSelectionView: View {
                     viewModel.handleViewAction(.didScrollTeaPage(newTeaPageId: actualTeaPage.id))
                     switch action {
                     case .readAboutTea:
-                        viewModel.handleViewAction(.didClickOnInfoButton)
+                         viewModel.handleViewAction(.didClickOnInfoButton)
                     case .brewTea: print("brew tea")
                     case .addTeaToList: print("add to list")
                     }
+                }
+                .tabItem {
+                    Label(
+                        title: { Text(actualTeaPage.name) },
+                        icon: {
+                            Image(systemName: "leaf.fill")
+                                .foregroundStyle(actualTeaPage.bgColor)
+                        }
+                    )
                 }
                 .tag(actualTeaPage.id)
                 .ignoresSafeArea()

@@ -7,6 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2020C192BAC8069009C4144 /* TeaImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C182BAC8069009C4144 /* TeaImmersiveView.swift */; };
+		A2020C1C2BAC92C9009C4144 /* SplineRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = A2020C1B2BAC92C9009C4144 /* SplineRuntime */; };
+		A2020C1F2BAC9D91009C4144 /* TeaGuideViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C1E2BAC9D91009C4144 /* TeaGuideViewPage.swift */; };
+		A2020C212BACA1CE009C4144 /* TeaGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C202BACA1CE009C4144 /* TeaGuideView.swift */; };
+		A2020C242BAF3E15009C4144 /* TTAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C232BAF3E15009C4144 /* TTAppViewModel.swift */; };
+		A2020C262BAF3FE3009C4144 /* WindowsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C252BAF3FE3009C4144 /* WindowsConstants.swift */; };
+		A2020C2B2BAF48C3009C4144 /* TTAppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C2A2BAF48C3009C4144 /* TTAppFeature.swift */; };
+		A2020C2D2BAF48E8009C4144 /* TTAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C2C2BAF48E8009C4144 /* TTAppState.swift */; };
+		A2020C2F2BAF491D009C4144 /* TTAppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C2E2BAF491D009C4144 /* TTAppAction.swift */; };
+		A2020C332BB309DB009C4144 /* TeaPrebrewingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C322BB309DB009C4144 /* TeaPrebrewingSettingsView.swift */; };
+		A2020C352BB4932B009C4144 /* TeaPrebrewingSettingsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C342BB4932B009C4144 /* TeaPrebrewingSettingsGridView.swift */; };
+		A2020C372BB5C70A009C4144 /* TeaPrebrewingSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C362BB5C70A009C4144 /* TeaPrebrewingSettingsViewModel.swift */; };
+		A2020C3B2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C3A2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift */; };
+		A2020C3D2BB5C759009C4144 /* TeaPrebrewingSettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C3C2BB5C759009C4144 /* TeaPrebrewingSettingsState.swift */; };
+		A2020C3F2BB5C914009C4144 /* TeaPrebrewingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C3E2BB5C914009C4144 /* TeaPrebrewingSettings.swift */; };
+		A2020C412BB5CC83009C4144 /* TeaBrewingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C402BB5CC83009C4144 /* TeaBrewingMode.swift */; };
+		A2020C432BB5D3BC009C4144 /* TeaSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2020C422BB5D3BC009C4144 /* TeaSettings.swift */; };
+		A222A8112BBB3639004AA016 /* TeaGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A222A8102BBB3639004AA016 /* TeaGuideViewModel.swift */; };
+		A222A8132BBB3DD8004AA016 /* TeaGuideViewModelFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A222A8122BBB3DD8004AA016 /* TeaGuideViewModelFeature.swift */; };
+		A222A8162BBB400F004AA016 /* BlurRadiusModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A222A8152BBB400F004AA016 /* BlurRadiusModifier.swift */; };
+		A237F3B52BA0C6200095E2C2 /* TeaBrewingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237F3B42BA0C6200095E2C2 /* TeaBrewingTimerView.swift */; };
+		A237F3B82BA0CE5A0095E2C2 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A237F3B72BA0CE5A0095E2C2 /* CircularProgressView.swift */; };
+		A23B554B2BA7023C00BDB055 /* TeaBrewingSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B554A2BA7023C00BDB055 /* TeaBrewingSplitView.swift */; };
+		A23B554F2BA704B100BDB055 /* TeaBrewingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B554E2BA704B100BDB055 /* TeaBrewingFeature.swift */; };
+		A23B55512BA7050800BDB055 /* TeaBrewingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55502BA7050800BDB055 /* TeaBrewingViewModel.swift */; };
+		A23B55532BA7055100BDB055 /* TeaBrewingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55522BA7055100BDB055 /* TeaBrewingState.swift */; };
+		A23B55552BA70C2A00BDB055 /* TeaBrewingPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55542BA70C2A00BDB055 /* TeaBrewingPhase.swift */; };
+		A23B55572BA7191800BDB055 /* TeaBrewingTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55562BA7191800BDB055 /* TeaBrewingTimerViewModel.swift */; };
+		A23B55592BA71A8100BDB055 /* TeaBrewingTimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55582BA71A8100BDB055 /* TeaBrewingTimerFeature.swift */; };
 		A2ADD7882B9A161D008AE12E /* TeaTimerRemakeV2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */; };
 		A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7892B9A161D008AE12E /* ContentView.swift */; };
 		A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD78B2B9A161D008AE12E /* Item.swift */; };
@@ -36,6 +65,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2020C182BAC8069009C4144 /* TeaImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaImmersiveView.swift; sourceTree = "<group>"; };
+		A2020C1E2BAC9D91009C4144 /* TeaGuideViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaGuideViewPage.swift; sourceTree = "<group>"; };
+		A2020C202BACA1CE009C4144 /* TeaGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaGuideView.swift; sourceTree = "<group>"; };
+		A2020C232BAF3E15009C4144 /* TTAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAppViewModel.swift; sourceTree = "<group>"; };
+		A2020C252BAF3FE3009C4144 /* WindowsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsConstants.swift; sourceTree = "<group>"; };
+		A2020C2A2BAF48C3009C4144 /* TTAppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAppFeature.swift; sourceTree = "<group>"; };
+		A2020C2C2BAF48E8009C4144 /* TTAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAppState.swift; sourceTree = "<group>"; };
+		A2020C2E2BAF491D009C4144 /* TTAppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTAppAction.swift; sourceTree = "<group>"; };
+		A2020C302BAF8E6E009C4144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A2020C322BB309DB009C4144 /* TeaPrebrewingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaPrebrewingSettingsView.swift; sourceTree = "<group>"; };
+		A2020C342BB4932B009C4144 /* TeaPrebrewingSettingsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaPrebrewingSettingsGridView.swift; sourceTree = "<group>"; };
+		A2020C362BB5C70A009C4144 /* TeaPrebrewingSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaPrebrewingSettingsViewModel.swift; sourceTree = "<group>"; };
+		A2020C3A2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeaPrebrewingSettingsFeature+Actions.swift"; sourceTree = "<group>"; };
+		A2020C3C2BB5C759009C4144 /* TeaPrebrewingSettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaPrebrewingSettingsState.swift; sourceTree = "<group>"; };
+		A2020C3E2BB5C914009C4144 /* TeaPrebrewingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaPrebrewingSettings.swift; sourceTree = "<group>"; };
+		A2020C402BB5CC83009C4144 /* TeaBrewingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingMode.swift; sourceTree = "<group>"; };
+		A2020C422BB5D3BC009C4144 /* TeaSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSettings.swift; sourceTree = "<group>"; };
+		A222A8102BBB3639004AA016 /* TeaGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaGuideViewModel.swift; sourceTree = "<group>"; };
+		A222A8122BBB3DD8004AA016 /* TeaGuideViewModelFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaGuideViewModelFeature.swift; sourceTree = "<group>"; };
+		A222A8152BBB400F004AA016 /* BlurRadiusModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRadiusModifier.swift; sourceTree = "<group>"; };
+		A237F3B42BA0C6200095E2C2 /* TeaBrewingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingTimerView.swift; sourceTree = "<group>"; };
+		A237F3B72BA0CE5A0095E2C2 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		A23B554A2BA7023C00BDB055 /* TeaBrewingSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingSplitView.swift; sourceTree = "<group>"; };
+		A23B554E2BA704B100BDB055 /* TeaBrewingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingFeature.swift; sourceTree = "<group>"; };
+		A23B55502BA7050800BDB055 /* TeaBrewingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingViewModel.swift; sourceTree = "<group>"; };
+		A23B55522BA7055100BDB055 /* TeaBrewingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingState.swift; sourceTree = "<group>"; };
+		A23B55542BA70C2A00BDB055 /* TeaBrewingPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingPhase.swift; sourceTree = "<group>"; };
+		A23B55562BA7191800BDB055 /* TeaBrewingTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingTimerViewModel.swift; sourceTree = "<group>"; };
+		A23B55582BA71A8100BDB055 /* TeaBrewingTimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingTimerFeature.swift; sourceTree = "<group>"; };
 		A2ADD7842B9A161D008AE12E /* TeaTimerRemakeV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaTimerRemakeV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerRemakeV2App.swift; sourceTree = "<group>"; };
 		A2ADD7892B9A161D008AE12E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,12 +128,137 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2020C1C2BAC92C9009C4144 /* SplineRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2020C172BAC8051009C4144 /* TeaImmersiveView */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C182BAC8069009C4144 /* TeaImmersiveView.swift */,
+			);
+			path = TeaImmersiveView;
+			sourceTree = "<group>";
+		};
+		A2020C1D2BAC9D82009C4144 /* TeaGuideView */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C1E2BAC9D91009C4144 /* TeaGuideViewPage.swift */,
+				A2020C202BACA1CE009C4144 /* TeaGuideView.swift */,
+				A222A8102BBB3639004AA016 /* TeaGuideViewModel.swift */,
+				A222A8122BBB3DD8004AA016 /* TeaGuideViewModelFeature.swift */,
+			);
+			path = TeaGuideView;
+			sourceTree = "<group>";
+		};
+		A2020C222BAF3DED009C4144 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C272BAF487B009C4144 /* ViewModel */,
+				A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */,
+				A2020C252BAF3FE3009C4144 /* WindowsConstants.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A2020C272BAF487B009C4144 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C282BAF48B1009C4144 /* Feature */,
+				A2020C232BAF3E15009C4144 /* TTAppViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2020C282BAF48B1009C4144 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C2A2BAF48C3009C4144 /* TTAppFeature.swift */,
+				A2020C2C2BAF48E8009C4144 /* TTAppState.swift */,
+				A2020C2E2BAF491D009C4144 /* TTAppAction.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		A2020C312BB309AB009C4144 /* TeaPrebrewingSettingsScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C382BB5C719009C4144 /* ViewModel */,
+				A2020C322BB309DB009C4144 /* TeaPrebrewingSettingsView.swift */,
+				A2020C342BB4932B009C4144 /* TeaPrebrewingSettingsGridView.swift */,
+			);
+			path = TeaPrebrewingSettingsScene;
+			sourceTree = "<group>";
+		};
+		A2020C382BB5C719009C4144 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C362BB5C70A009C4144 /* TeaPrebrewingSettingsViewModel.swift */,
+				A2020C3A2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift */,
+				A2020C3C2BB5C759009C4144 /* TeaPrebrewingSettingsState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A222A8142BBB4002004AA016 /* Modfiiers */ = {
+			isa = PBXGroup;
+			children = (
+				A222A8152BBB400F004AA016 /* BlurRadiusModifier.swift */,
+			);
+			path = Modfiiers;
+			sourceTree = "<group>";
+		};
+		A237F3B32BA0C5F10095E2C2 /* TeaBrewingTimerView */ = {
+			isa = PBXGroup;
+			children = (
+				A237F3B42BA0C6200095E2C2 /* TeaBrewingTimerView.swift */,
+				A23B55562BA7191800BDB055 /* TeaBrewingTimerViewModel.swift */,
+				A23B55582BA71A8100BDB055 /* TeaBrewingTimerFeature.swift */,
+			);
+			path = TeaBrewingTimerView;
+			sourceTree = "<group>";
+		};
+		A237F3B62BA0CE4E0095E2C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A237F3B72BA0CE5A0095E2C2 /* CircularProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A23B55492BA7021F00BDB055 /* TeaBrewingSplitView */ = {
+			isa = PBXGroup;
+			children = (
+				A23B554A2BA7023C00BDB055 /* TeaBrewingSplitView.swift */,
+			);
+			path = TeaBrewingSplitView;
+			sourceTree = "<group>";
+		};
+		A23B554C2BA7046E00BDB055 /* TeaBrewingScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2020C1D2BAC9D82009C4144 /* TeaGuideView */,
+				A2020C172BAC8051009C4144 /* TeaImmersiveView */,
+				A23B554D2BA7049900BDB055 /* TeaBrewingViewModel */,
+				A23B55492BA7021F00BDB055 /* TeaBrewingSplitView */,
+				A237F3B32BA0C5F10095E2C2 /* TeaBrewingTimerView */,
+			);
+			path = TeaBrewingScene;
+			sourceTree = "<group>";
+		};
+		A23B554D2BA7049900BDB055 /* TeaBrewingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A23B554E2BA704B100BDB055 /* TeaBrewingFeature.swift */,
+				A23B55502BA7050800BDB055 /* TeaBrewingViewModel.swift */,
+				A23B55522BA7055100BDB055 /* TeaBrewingState.swift */,
+			);
+			path = TeaBrewingViewModel;
+			sourceTree = "<group>";
+		};
 		A2ADD77B2B9A161D008AE12E = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +278,10 @@
 		A2ADD7862B9A161D008AE12E /* TeaTimerRemakeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				A2020C312BB309AB009C4144 /* TeaPrebrewingSettingsScene */,
+				A2020C302BAF8E6E009C4144 /* Info.plist */,
+				A2020C222BAF3DED009C4144 /* App */,
+				A23B554C2BA7046E00BDB055 /* TeaBrewingScene */,
 				A2ADD7C72B9F878E008AE12E /* TeaSelectionView_VisionPro */,
 				A2ADD7C02B9E2417008AE12E /* Entities */,
 				A2ADD7B62B9B503A008AE12E /* TeaAboutView */,
@@ -102,7 +289,6 @@
 				A2ADD7902B9A161E008AE12E /* Preview Assets.xcassets */,
 				A2ADD79B2B9A17EE008AE12E /* TeaSelectionView */,
 				A2ADD7972B9A1636008AE12E /* Helpers */,
-				A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */,
 				A2ADD78D2B9A161E008AE12E /* Assets.xcassets */,
 				A2ADD78F2B9A161E008AE12E /* Preview Content */,
 			);
@@ -119,6 +305,8 @@
 		A2ADD7972B9A1636008AE12E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A222A8142BBB4002004AA016 /* Modfiiers */,
+				A237F3B62BA0CE4E0095E2C2 /* Views */,
 				A2ADD7B12B9A3A37008AE12E /* Player */,
 				A2ADD7982B9A1666008AE12E /* SwiftDataExample */,
 				A2ADD7992B9A167F008AE12E /* ViewModel-Pattern.swift */,
@@ -223,6 +411,10 @@
 			children = (
 				A2ADD7C12B9E2441008AE12E /* TeaInfo.swift */,
 				A2ADD7C32B9E26CA008AE12E /* Tea.swift */,
+				A23B55542BA70C2A00BDB055 /* TeaBrewingPhase.swift */,
+				A2020C3E2BB5C914009C4144 /* TeaPrebrewingSettings.swift */,
+				A2020C402BB5CC83009C4144 /* TeaBrewingMode.swift */,
+				A2020C422BB5D3BC009C4144 /* TeaSettings.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -261,6 +453,9 @@
 			dependencies = (
 			);
 			name = TeaTimerRemakeV2;
+			packageProductDependencies = (
+				A2020C1B2BAC92C9009C4144 /* SplineRuntime */,
+			);
 			productName = TeaTimerRemakeV2;
 			productReference = A2ADD7842B9A161D008AE12E /* TeaTimerRemakeV2.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +484,9 @@
 				Base,
 			);
 			mainGroup = A2ADD77B2B9A161D008AE12E;
+			packageReferences = (
+				A2020C1A2BAC92C9009C4144 /* XCRemoteSwiftPackageReference "spline-ios" */,
+			);
 			productRefGroup = A2ADD7852B9A161D008AE12E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,26 +517,54 @@
 				A2ADD7C22B9E2441008AE12E /* TeaInfo.swift in Sources */,
 				A2ADD7C62B9F7C04008AE12E /* Colors.swift in Sources */,
 				A2ADD7C92B9F87F8008AE12E /* TeaSelectionSplitView.swift in Sources */,
+				A2020C432BB5D3BC009C4144 /* TeaSettings.swift in Sources */,
+				A2020C332BB309DB009C4144 /* TeaPrebrewingSettingsView.swift in Sources */,
 				A2ADD7A72B9A1A9B008AE12E /* ViewInteraction.swift in Sources */,
 				A2ADD7A02B9A1835008AE12E /* TeaSelectionView-ViewModel.swift in Sources */,
+				A222A8132BBB3DD8004AA016 /* TeaGuideViewModelFeature.swift in Sources */,
 				A2ADD7B52B9A3A88008AE12E /* VideoPlayerUIView.swift in Sources */,
+				A222A8112BBB3639004AA016 /* TeaGuideViewModel.swift in Sources */,
+				A222A8162BBB400F004AA016 /* BlurRadiusModifier.swift in Sources */,
 				A2ADD7CB2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift in Sources */,
+				A2020C412BB5CC83009C4144 /* TeaBrewingMode.swift in Sources */,
 				A2ADD7BD2B9E233E008AE12E /* TeaAboutViewModel.swift in Sources */,
+				A2020C2B2BAF48C3009C4144 /* TTAppFeature.swift in Sources */,
 				A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */,
 				A2ADD79D2B9A1803008AE12E /* TeaSelectionView.swift in Sources */,
+				A23B55572BA7191800BDB055 /* TeaBrewingTimerViewModel.swift in Sources */,
 				A2ADD7CE2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift in Sources */,
+				A2020C1F2BAC9D91009C4144 /* TeaGuideViewPage.swift in Sources */,
+				A23B55592BA71A8100BDB055 /* TeaBrewingTimerFeature.swift in Sources */,
 				A2ADD7B82B9B552B008AE12E /* TeaAboutView.swift in Sources */,
+				A23B55512BA7050800BDB055 /* TeaBrewingViewModel.swift in Sources */,
 				A2ADD7A22B9A1893008AE12E /* TeaSelectionView-ViewModelFeature.swift in Sources */,
+				A23B554F2BA704B100BDB055 /* TeaBrewingFeature.swift in Sources */,
+				A2020C2F2BAF491D009C4144 /* TTAppAction.swift in Sources */,
+				A23B554B2BA7023C00BDB055 /* TeaBrewingSplitView.swift in Sources */,
+				A2020C192BAC8069009C4144 /* TeaImmersiveView.swift in Sources */,
+				A2020C3D2BB5C759009C4144 /* TeaPrebrewingSettingsState.swift in Sources */,
+				A2020C242BAF3E15009C4144 /* TTAppViewModel.swift in Sources */,
 				A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */,
 				A2ADD7BA2B9B554A008AE12E /* TeaInfoCardView.swift in Sources */,
 				A2ADD7C42B9E26CA008AE12E /* Tea.swift in Sources */,
+				A237F3B52BA0C6200095E2C2 /* TeaBrewingTimerView.swift in Sources */,
 				A2ADD7882B9A161D008AE12E /* TeaTimerRemakeV2App.swift in Sources */,
 				A2ADD7AD2B9A1F4C008AE12E /* TTButton.swift in Sources */,
 				A2ADD79A2B9A167F008AE12E /* ViewModel-Pattern.swift in Sources */,
+				A23B55552BA70C2A00BDB055 /* TeaBrewingPhase.swift in Sources */,
+				A2020C212BACA1CE009C4144 /* TeaGuideView.swift in Sources */,
+				A2020C3B2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift in Sources */,
 				A2ADD7A92B9A1B67008AE12E /* TeaSelectionCardView.swift in Sources */,
+				A2020C262BAF3FE3009C4144 /* WindowsConstants.swift in Sources */,
 				A2ADD7A52B9A1A82008AE12E /* State.swift in Sources */,
 				A2ADD7BF2B9E2389008AE12E /* TeaAboutViewModelFeature.swift in Sources */,
+				A2020C372BB5C70A009C4144 /* TeaPrebrewingSettingsViewModel.swift in Sources */,
+				A2020C3F2BB5C914009C4144 /* TeaPrebrewingSettings.swift in Sources */,
+				A2020C352BB4932B009C4144 /* TeaPrebrewingSettingsGridView.swift in Sources */,
+				A2020C2D2BAF48E8009C4144 /* TTAppState.swift in Sources */,
+				A237F3B82BA0CE5A0095E2C2 /* CircularProgressView.swift in Sources */,
 				A2ADD7B32B9A3A49008AE12E /* VideoPlayerView.swift in Sources */,
+				A23B55532BA7055100BDB055 /* TeaBrewingState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +701,7 @@
 				DEVELOPMENT_TEAM = 4CV999C7WN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeaTimerRemakeV2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,6 +734,7 @@
 				DEVELOPMENT_TEAM = 4CV999C7WN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeaTimerRemakeV2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -550,6 +778,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2020C1A2BAC92C9009C4144 /* XCRemoteSwiftPackageReference "spline-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/splinetool/spline-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2020C1B2BAC92C9009C4144 /* SplineRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2020C1A2BAC92C9009C4144 /* XCRemoteSwiftPackageReference "spline-ios" */;
+			productName = SplineRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A2ADD77C2B9A161D008AE12E /* Project object */;
 }

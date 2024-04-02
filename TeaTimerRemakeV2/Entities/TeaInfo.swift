@@ -7,13 +7,27 @@
 
 import Foundation
 
-struct TeaInfo {
+protocol HashableCodable: Codable, Hashable, Equatable {
+    
+}
+
+struct TeaInfo: Identifiable, HashableCodable {
+    var id: UUID = UUID()
     var teaName: String
     var teaImageName: String
     var teaProperties: [TeaPropertySection]
+    var teaBrewingPhases: [TeaBrewingPhase]
+    
+    static func == (lhs: TeaInfo, rhs: TeaInfo) -> Bool {
+        return lhs.id == lhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
-struct TeaPropertySection: Identifiable {
+struct TeaPropertySection: Identifiable, Codable {
     var id = UUID()
     var sectionName: String?
     var teaProperties: [TeaProperty]
@@ -44,7 +58,7 @@ struct TeaPropertySection: Identifiable {
 }
 
 
-struct TeaProperty: Identifiable {
+struct TeaProperty: Identifiable, Codable {
     var id = UUID()
     var name: String
     var iconName: String

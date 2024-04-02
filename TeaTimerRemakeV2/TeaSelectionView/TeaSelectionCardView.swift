@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TeaSelectionCardView: View {
+    @Environment(TTAppViewModel.self) private var navViewModel
+    
     var tea: Tea
     
     var isVisionOs: Bool {
@@ -25,20 +27,23 @@ struct TeaSelectionCardView: View {
     
     
     @ViewBuilder private func teaInfo() -> some View {
-        ZStack {
-            VideoPlayerView(url: "puerhTeaVideo")
-            VStack(alignment: .leading, spacing: 10) {
-                Spacer()
-                Text(tea.name)
-                    .font(.system(size: 40, weight: .heavy))
-                    .foregroundStyle(Color.white)
-                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-                teaInteractionButtons()
+        NavigationStack {
+            ZStack {
+                VideoPlayerView(url: "puerhTeaVideo")
+                VStack(alignment: .leading, spacing: 10) {
+                    Spacer()
+                    Text(tea.name)
+                        .font(.system(size: 40, weight: .heavy))
+                        .foregroundStyle(Color.white)
+                        .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                    teaInteractionButtons()
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, 70)
+                .padding(.leading, 20)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, 70)
-            .padding(.leading, 20)
         }
+        .toolbar(.hidden)
     }
     
     @ViewBuilder private func teaInteractionButtons() -> some View {
@@ -56,9 +61,9 @@ struct TeaSelectionCardView: View {
                         Label("About", systemImage: "info.circle.fill")
                     })
                 }
-                Button(action: { teaSelectionCardViewAction(.brewTea)}, label: {
+                NavigationLink(value: "") {
                     Label("Brew a tea", systemImage: "flame.fill")
-                })
+                }
             }
         } else {
             VStack(alignment: .leading, spacing: 10) {
@@ -86,7 +91,7 @@ struct TeaSelectionCardView: View {
 }
 
 #Preview {
-    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green, teaInformation: .init(teaName: "tea", teaImageName: "", teaProperties: []))) { action in
+    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green, teaInformation: .init(teaName: "tea", teaImageName: "", teaProperties: [], teaBrewingPhases: []))) { action in
         switch action {
         case .addTeaToList:
             print("add")

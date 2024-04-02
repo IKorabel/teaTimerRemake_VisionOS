@@ -27,13 +27,13 @@ struct Tea: Identifiable {
     }
     
     
-    static let teaList: [Tea] = [.init(tea: .shuPuerh), .init(tea: .shuPuerh)]
+    static let teaList: [Tea] = [.init(tea: .shuPuerh), .init(tea: .shengPuerh)]
 }
 
 extension Tea {
     
     enum TeaKind {
-        case shuPuerh
+        case shuPuerh, shengPuerh
         
         var tea: Tea {
             switch self {
@@ -54,7 +54,28 @@ extension Tea {
                                       .init(name: "Boosts immunity", iconName: "shield.righthalf.filled"),
                                       .init(name: "Weight Loss", iconName: "scalemass.fill"),
                                       .init(name: "Removes toxins", iconName: "pill.fill")
-                                  ])]
+                                  ])],
+                                    teaBrewingPhases: TeaBrewingPhase.mockBrewingPhases
+                                   ))
+            case .shengPuerh:
+                return Tea(name: "Sheng Puerh", bgColor: .ttGreen,
+                           teaInformation: .init(teaName: "Sheng Puerh", teaImageName: "",
+                            teaProperties: [
+                                  TeaPropertySection(section: .main,
+                                                     teaProperties: [
+                                      .init(name: "Mainland, China", iconName: "mappin.circle.fill"),
+                                      .init(name: "Morning", iconName: "sunrise.fill"),
+                                      .init(name: "Energizer", iconName: "bolt.fill")]),
+                                  TeaPropertySection(section: .power,
+                                                     teaProperties:
+                                                      [.init(name: "Concentration", iconName: "eye.fill"),
+                                                       .init(name: "Vigor", iconName: "bolt.fill")]),
+                                  TeaPropertySection(section: .health, teaProperties: [
+                                      .init(name: "Boosts immunity", iconName: "shield.righthalf.filled"),
+                                      .init(name: "Weight Loss", iconName: "scalemass.fill"),
+                                      .init(name: "Removes toxins", iconName: "pill.fill")
+                                  ])],
+                                    teaBrewingPhases: TeaBrewingPhase.mockBrewingPhases
                                    ))
             }
         }

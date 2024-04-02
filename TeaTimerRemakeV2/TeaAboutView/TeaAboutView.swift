@@ -10,14 +10,17 @@ import SwiftUI
 struct TeaAboutView: View {
     
     var viewModel: TeaAboutViewModel
+    
+    @Environment(TTAppViewModel.self) private var navViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismissWindow) private var dismissWindow
     
     init(teaInfo: TeaInfo) {
         self.viewModel = TeaAboutViewModel(teaInfo: teaInfo)
     }
     var body: some View {
         
-        let columns = Array(repeating: GridItem(.adaptive(minimum: 120), spacing: viewModel.spacing), count: viewModel.numberOfRows)
+        let columns = Array(repeating: GridItem(.adaptive(minimum: 120, maximum: 300), spacing: viewModel.spacing), count: viewModel.numberOfRows)
         
         NavigationStack {
             ScrollView {
@@ -26,7 +29,7 @@ struct TeaAboutView: View {
                 
                 LazyVGrid(columns: columns, spacing: viewModel.spacing, pinnedViews: [.sectionHeaders], content: {
                     
-                    ForEach(viewModel.teaInfo.teaProperties) { teaPropertySection in
+                    ForEach(navViewModel.state.selectedTea.teaInformation.teaProperties) { teaPropertySection in
                         Section(header: categoryHeader(withHeader: teaPropertySection.sectionName)) {
                             ForEach(teaPropertySection.teaProperties) { teaProperty in
                                 TeaInfoCardView(teaProperty: teaProperty)
@@ -36,18 +39,22 @@ struct TeaAboutView: View {
                 })
                 .padding(.horizontal)
             }
+            .onAppear(perform: {
+                print("navViewModel: \(navViewModel.state.selectedTea)")
+            })
             .navigationTitle("Your tea")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        dismiss()
+                        viewModel.dismiss(dismissAction: dismiss, dismissWindowAction: dismissWindow)
+                        navViewModel.state.didOpenTeaInfoView = false
                     } label: {
                         Image(systemName: viewModel.isVisionOS ? "xmark" : "xmark.circle.fill")
 //                            .foregroundStyle(Color.ttGreen)
                     }
                 }
-                
             }
+            
             
         }
     }
@@ -57,7 +64,7 @@ struct TeaAboutView: View {
             Image(systemName: "cup.and.saucer.fill")
            //     .foregroundStyle(Color.ttGreen)
                 .font(.system(size: 60))
-            Text(viewModel.teaInfo.teaName)
+            Text(navViewModel.state.selectedTea.name)
                 .font(.system(size: 24, weight: .bold))
             Button(action: {
                 
@@ -80,5 +87,5 @@ struct TeaAboutView: View {
 }
 
 #Preview {
-    TeaAboutView(teaInfo: .init(teaName: "Shu", teaImageName: "cup.and.saucer.fill", teaProperties: [.init(section: .health, teaProperties: [.init(name: "pills", iconName: "pills.fill")])]))
+    TeaAboutView(teaInfo: .init(teaName: "Shu", teaImageName: "cup.and.saucer.fill", teaProperties: [.init(section: .health, teaProperties: [.init(name: "pills", iconName: "pills.fill")])], teaBrewingPhases: []))
 }

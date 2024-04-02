@@ -26,7 +26,6 @@ struct TeaInfoCardView: View {
                 .bold()
                 .font(.system(size: 14))
         }
-        .frame(width: 120, height: 116)
         .background(.thinMaterial, in: .rect(cornerRadius: 20))
         
     }

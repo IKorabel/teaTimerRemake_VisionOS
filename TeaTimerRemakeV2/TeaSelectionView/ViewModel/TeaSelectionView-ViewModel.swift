@@ -19,7 +19,7 @@ class TeaSelectionViewModel: TeaSelectionViewFeature.ViewModelType {
     override func handleViewAction(_ action: TeaSelectionViewFeature.ViewAction) {
         switch action {
         case .didClickOnInfoButton:
-            handleCallBackAction(.readAboutTea)
+            readAboutTea()
         case .didScrollTeaPage(let newTeaPageId):
             selectTeaPage(id: newTeaPageId)
         default:
