@@ -16,7 +16,6 @@ struct TeaBrewingFeature {
         case didClickOnPauseButton
         case didClickOnGoNextButton
         case didClickOnGoBackButton
-        case didClickOnNextGuidePageButton(withTabIndex: Int, dismissAction: DismissAction)
         case didClickOnSkipManualButton
     }
     

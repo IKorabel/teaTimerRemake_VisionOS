@@ -10,16 +10,13 @@ import Foundation
 
 struct PrebrewingSettingsGridView: View {
     @Environment(TeaPrebrewingSettingsViewModel.self) private var viewModel
+    
     let teaSettingsOption: TeaBrewingMode
     
     var isSelected: Bool = false
     
-    private var isVisionOS: Bool {
-        #if os(visionOS)
-        return true
-        #else
-        return false
-        #endif
+    var isVisionOS: Bool {
+        return viewModel.isVisionOS
     }
     
     var body: some View {

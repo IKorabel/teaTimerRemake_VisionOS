@@ -20,15 +20,14 @@ struct TeaGuideView: View {
     var body: some View {
         VStack {
             TabView(selection: $viewModel.state.selectedGuidePageTabIndex) {
-                ForEach(Array(envViewModel.selectedPhaseGuide.enumerated()), id: \.offset) { index, guidePage in
+                ForEach(Array(viewModel.guidePages.enumerated()), id: \.offset) { index, guidePage in
                     buildTeaGuideViewPage(guidePage: guidePage)
                         .tag(index)
                 }
             }
         }
         .onChange(of: envViewModel.state.selectedPhaseId, { oldValue, newValue in
-            print("should change")
-            viewModel.state.selectedGuidePageTabIndex = 0
+            viewModel.handleViewAction(.didChangeBrewingPhase(envViewMode: envViewModel))
         })
           .padding(.bottom, 20)
           .tabViewStyle(.page(indexDisplayMode: .always))
@@ -61,7 +60,7 @@ struct TeaGuideView: View {
             Button("Done", action: {
                 print("Count: \(envViewModel.selectedPhase.guidePages.count)")
                 print("Index: \(viewModel.state.selectedGuidePageTabIndex + 1)")
-                if viewModel.state.selectedGuidePageTabIndex + 1 == envViewModel.selectedPhase.guidePages.count {
+                if viewModel.state.selectedGuidePageTabIndex + 1 == viewModel.guidePages.count {
                     envViewModel.dismissGuidePage()
                 } else {
                     viewModel.handleViewAction(.didClickOnDoneButton)

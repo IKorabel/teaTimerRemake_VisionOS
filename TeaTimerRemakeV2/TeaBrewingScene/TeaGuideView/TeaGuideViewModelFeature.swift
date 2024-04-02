@@ -16,6 +16,7 @@ struct TeaGuideViewModelFeature {
     
     enum ViewAction {
         case didClickOnDoneButton
+        case didChangeBrewingPhase(envViewMode: TeaBrewingViewModel)
     }
     
     enum CallbackAction {

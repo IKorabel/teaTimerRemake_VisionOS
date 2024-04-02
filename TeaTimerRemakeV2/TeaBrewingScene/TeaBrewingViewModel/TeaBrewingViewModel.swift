@@ -50,8 +50,6 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
             goToNextStage()
         case .didClickOnGoBackButton:
             goToPreviousPage()
-        case .didClickOnNextGuidePageButton(let tabIndex, let dismissAction):
-            didClickOnNextGuidePageButton(withTabIndex: tabIndex, dismissAction: dismissAction)
         case .didClickOnSkipManualButton:
             dismissGuidePage()
         }
@@ -114,6 +112,7 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
         state.timer.upstream.connect().cancel()
         state.selectedPhaseId = nextPhase.id
         state.selectedTab = nextIndex
+        state.isGuideShowing = !selectedPhase.isGuideCompleted
     }
     
     private func playTimer() {
@@ -128,20 +127,10 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
     }
     
     //MARK: Guide Page View
+    
     func didCompleteGuide() {
         guard let completedGuideInBrewingPhaseIndex = brewingPhases.firstIndex(where: { $0.id == selectedPhase.id}) else { return }
         brewingPhases[completedGuideInBrewingPhaseIndex].isGuideCompleted = true
-    }
-    
-    private func didClickOnNextGuidePageButton(withTabIndex: Int, dismissAction: DismissAction) {
-        let guidePages = selectedPhase.guidePages
-        
-        if withTabIndex + 1 == guidePages.count {
-            dismissGuidePage()
-            print("last last")
-        } else {
-          //  withTabIndex += 1
-        }
     }
     
     func dismissGuidePage() {

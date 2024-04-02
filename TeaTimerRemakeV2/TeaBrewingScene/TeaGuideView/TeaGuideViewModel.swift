@@ -10,16 +10,12 @@ import Foundation
 
 class TeaGuideViewModel: TeaGuideViewModelFeature.viewModel {
     var guidePages: [TeaBrewingGuidePage]
-    var envViewModel: TeaBrewingViewModel?
     
     init(guidePages: [TeaBrewingGuidePage]) {
         self.guidePages = guidePages
         super.init(state: .init())
     }
     
-    func setupEnvironment(envViewModel: TeaBrewingViewModel) {
-        self.envViewModel = envViewModel
-    }
 //
 //    init(guidePages: [TeaBrewingGuidePage]) {
 //        self.guidePages = guidePages
@@ -35,10 +31,17 @@ class TeaGuideViewModel: TeaGuideViewModelFeature.viewModel {
         switch action {
         case .didClickOnDoneButton:
             goNext()
+        case .didChangeBrewingPhase(let envViewModel):
+            updateGuideView(viewModel: envViewModel)
         }
     }
     
     private func goNext() {
         state.selectedGuidePageTabIndex += 1
+    }
+    
+    private func updateGuideView(viewModel: TeaBrewingViewModel) {
+        self.guidePages = viewModel.selectedPhaseGuide
+        self.state.selectedGuidePageTabIndex = 0
     }
 }
