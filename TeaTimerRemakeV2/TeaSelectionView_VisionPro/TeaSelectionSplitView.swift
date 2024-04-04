@@ -14,37 +14,23 @@ struct TeaSelectionSplitView: View {
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
     
+    #if os(visionOS)
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    #endif
     
     @State private var navigateToBrewingTimer: Bool = false
     
     var body: some View {
         NavigationSplitView {
             List(viewModel.allTeas, selection: $viewModel.state.selectedIndex) { tea in
-                    Label(title: { Text(tea.name) },
-                          icon: {
-                        Image(systemName: "leaf.fill").foregroundStyle(tea.bgColor) })
+                    listCell(tea: tea)
             }
             .navigationTitle("Select Tea")
         } detail: {
             let selectedTea = viewModel.defineSelectedTea()
-            TeaSelectionCardView(tea: selectedTea) { action in
-                switch action {
-                case .addTeaToList:
-                    print("add tea to list")
-                case .readAboutTea:
-                    navViewModel.openTeaInformationWindowInClick(selectedTea: selectedTea, openWindowAction: openWindow)
-                case .brewTea:
-//                    dismissWindow(id: WindowsConstants.teaInfoWindow)
-//                    openWindow(id: WindowsConstants.brewingTimerWindow)
-//                    openWindow(id: WindowsConstants.brewingGuideWindow)
-                    print("brew")
-                }
-            }
-            .environment(navViewModel)
-            .ignoresSafeArea()
-            .navigationDestination(for: String.self) { value in
-                TeaPrebrewingSettingsView(viewModel: .init())
-            }
+            TeaSelectionCardView(tea: selectedTea)
+                .environment(navViewModel)
+                .ignoresSafeArea()
         }
         .onChange(of: viewModel.state.selectedIndex, { oldValue, newValue in
             let selectedTea = viewModel.defineSelectedTea()
@@ -57,6 +43,12 @@ struct TeaSelectionSplitView: View {
             TeaAboutView(teaInfo: viewModel.defineSelectedTea().teaInformation)
         })
         
+    }
+    
+    private func listCell(tea: Tea) -> some View {
+        Label(title: { Text(tea.name) },
+              icon: {
+            Image(systemName: "leaf.fill").foregroundStyle(tea.bgColor) })
     }
 
 }

@@ -11,7 +11,7 @@ struct TeaPrebrewingSettingsFeature {
     typealias viewModel = ViewModel<State, ViewAction, CallbackAction>
     
     enum ViewAction {
-        case didSelectOption(optionId: TeaBrewingMode.ID)
+        case didSelectOption(optionId: TeaBrewingWay.ID)
     }
     
     enum CallbackAction {

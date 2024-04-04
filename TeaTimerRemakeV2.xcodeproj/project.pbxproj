@@ -62,6 +62,8 @@
 		A2ADD7C92B9F87F8008AE12E /* TeaSelectionSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7C82B9F87F8008AE12E /* TeaSelectionSplitView.swift */; };
 		A2ADD7CB2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7CA2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift */; };
 		A2ADD7CE2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7CD2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift */; };
+		A2DDD7162BBC6AAC00F168F6 /* ImmersiveTeaBrewingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDD7152BBC6AAC00F168F6 /* ImmersiveTeaBrewingView.swift */; };
+		A2DDD7192BBF005B00F168F6 /* ImmersiveTeaBrewingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDD7182BBF005B00F168F6 /* ImmersiveTeaBrewingBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		A2ADD7C82B9F87F8008AE12E /* TeaSelectionSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionSplitView.swift; sourceTree = "<group>"; };
 		A2ADD7CA2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionVisionProViewModel.swift; sourceTree = "<group>"; };
 		A2ADD7CD2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaSelectionVisionProFeature.swift; sourceTree = "<group>"; };
+		A2DDD7152BBC6AAC00F168F6 /* ImmersiveTeaBrewingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveTeaBrewingView.swift; sourceTree = "<group>"; };
+		A2DDD7182BBF005B00F168F6 /* ImmersiveTeaBrewingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveTeaBrewingBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,7 @@
 		A2ADD7862B9A161D008AE12E /* TeaTimerRemakeV2 */ = {
 			isa = PBXGroup;
 			children = (
+				A2DDD7142BBC692400F168F6 /* ImmersiveTeaBrewingScene */,
 				A2020C312BB309AB009C4144 /* TeaPrebrewingSettingsScene */,
 				A2020C302BAF8E6E009C4144 /* Info.plist */,
 				A2020C222BAF3DED009C4144 /* App */,
@@ -437,6 +442,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A2DDD7142BBC692400F168F6 /* ImmersiveTeaBrewingScene */ = {
+			isa = PBXGroup;
+			children = (
+				A2DDD7172BBF004B00F168F6 /* Entities  */,
+				A2DDD7152BBC6AAC00F168F6 /* ImmersiveTeaBrewingView.swift */,
+			);
+			path = ImmersiveTeaBrewingScene;
+			sourceTree = "<group>";
+		};
+		A2DDD7172BBF004B00F168F6 /* Entities  */ = {
+			isa = PBXGroup;
+			children = (
+				A2DDD7182BBF005B00F168F6 /* ImmersiveTeaBrewingBackground.swift */,
+			);
+			path = "Entities ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -530,6 +552,7 @@
 				A2ADD7BD2B9E233E008AE12E /* TeaAboutViewModel.swift in Sources */,
 				A2020C2B2BAF48C3009C4144 /* TTAppFeature.swift in Sources */,
 				A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */,
+				A2DDD7162BBC6AAC00F168F6 /* ImmersiveTeaBrewingView.swift in Sources */,
 				A2ADD79D2B9A1803008AE12E /* TeaSelectionView.swift in Sources */,
 				A23B55572BA7191800BDB055 /* TeaBrewingTimerViewModel.swift in Sources */,
 				A2ADD7CE2B9F89E8008AE12E /* TeaSelectionVisionProFeature.swift in Sources */,
@@ -552,6 +575,7 @@
 				A2ADD7AD2B9A1F4C008AE12E /* TTButton.swift in Sources */,
 				A2ADD79A2B9A167F008AE12E /* ViewModel-Pattern.swift in Sources */,
 				A23B55552BA70C2A00BDB055 /* TeaBrewingPhase.swift in Sources */,
+				A2DDD7192BBF005B00F168F6 /* ImmersiveTeaBrewingBackground.swift in Sources */,
 				A2020C212BACA1CE009C4144 /* TeaGuideView.swift in Sources */,
 				A2020C3B2BB5C731009C4144 /* TeaPrebrewingSettingsFeature+Actions.swift in Sources */,
 				A2ADD7A92B9A1B67008AE12E /* TeaSelectionCardView.swift in Sources */,

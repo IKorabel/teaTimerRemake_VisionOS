@@ -7,6 +7,7 @@
 
 import Foundation
 
+@Observable
 class TeaSelectionViewModel: TeaSelectionViewFeature.ViewModelType {
     
     var teaList: [Tea] = Tea.teaList

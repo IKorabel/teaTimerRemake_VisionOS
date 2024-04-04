@@ -22,12 +22,12 @@ struct TeaBrewingTimerView: View {
             ZStack {
                 TeaGuideView(viewModel: .init(guidePages: viewModel.selectedPhaseGuide))
                     .environment(viewModel)
-                    .opacity(viewModel.state.isGuideShowing ? 1.0 : 0)
+                    .opacity(viewModel.state.isGuideShowing || viewModel.state.isGuideSheetPresented ? 1.0 : 0)
                     .animation(.spring, value: viewModel.state.isGuideShowing)
                     .ignoresSafeArea()
                 timerView
                     .toolbar {
-                        ToolbarItem(placement: .bottomOrnament) {
+                        ToolbarItem(placement: placementForToolbar) {
                             VStack {
                                 Text(viewModel.selectedPhase.phaseName)
                                     .font(.title)
@@ -50,8 +50,38 @@ struct TeaBrewingTimerView: View {
                 }
             }
         }
+        #if os(iOS)
+        .sheet(isPresented: $viewModel.state.isGuideSheetPresented, content: {
+            TeaGuideView(viewModel: .init(guidePages: viewModel.selectedPhaseGuide))
+                .environment(viewModel)
+        })
+        #endif
         .onChange(of: viewModel.state.isGuideShowing) { _, _ in
         }
+    }
+    
+    private var contentViewiOS: some View {
+        NavigationStack {
+            timerView
+                .toolbar {
+                    ToolbarItem(placement: placementForToolbar) {
+                        VStack {
+                            Text(viewModel.selectedPhase.phaseName)
+                                .font(.title)
+                            arrowsView
+                        }
+                        .padding()
+                    }
+                }
+        }
+    }
+    
+    private var placementForToolbar: ToolbarItemPlacement {
+        #if os(visionOS)
+        return ToolbarItemPlacement.bottomOrnament
+        #else
+        return ToolbarItemPlacement.bottomBar
+        #endif
     }
     
     private var timerView: some View {
@@ -81,26 +111,21 @@ struct TeaBrewingTimerView: View {
     
     private var arrowsView: some View {
         HStack(spacing: 20, content: {
-            Button(action: {
-                viewModel.handleViewAction(.didClickOnGoBackButton)
-            }, label: {
+            Button(action: { viewModel.handleViewAction(.didClickOnGoBackButton) }, label: {
                 Image(systemName: "chevron.backward")
             })
             .disabled(viewModel.isGoBackButtonEnabled)
             
-            Button(action: {
-                viewModel.didClickOnTimerControlButton()
-            }, label: {
+            Button(action: { viewModel.didClickOnTimerControlButton()}, label: {
                 Image(systemName: viewModel.state.isTimerActive ? "pause.fill" : "play.fill")
             })
             .disabled(viewModel.state.isGuideShowing)
             
-            Button(action: {
-                viewModel.handleViewAction(.didClickOnGoNextButton)
-            }, label: {
+            Button(action: { viewModel.handleViewAction(.didClickOnGoNextButton)}, label: {
                 Image(systemName: "chevron.right")
             })
             .disabled(viewModel.isGoNextButtonEnabled)
+            
             #if os(visionOS)
             .onChange(of: isShowingImmersiveSpace) { _, isShowing in
                 Task {
@@ -125,5 +150,5 @@ struct TeaBrewingTimerView: View {
 }
 
 #Preview {
-    TeaBrewingTimerView(viewModel: .init())
+    TeaBrewingTimerView(viewModel: .init(brewingPhases: []))
 }

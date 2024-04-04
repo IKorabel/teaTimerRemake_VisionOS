@@ -43,6 +43,10 @@ class TeaSelectionVisionProViewModel: TeaSelectionViewModel {
         }
     }
     
+    func getBrewingWaysForSelectedTea() -> [TeaBrewingWay] {
+        return defineSelectedTea().brewingWays
+    }
+    
     private func brewTea() {
         
     }

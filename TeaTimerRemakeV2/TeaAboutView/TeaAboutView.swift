@@ -9,14 +9,16 @@ import SwiftUI
 
 struct TeaAboutView: View {
     
-    var viewModel: TeaAboutViewModel
+    @StateObject var viewModel: TeaAboutViewModel
     
     @Environment(TTAppViewModel.self) private var navViewModel
+    
     @Environment(\.dismiss) private var dismiss
     @Environment(\.dismissWindow) private var dismissWindow
     
     init(teaInfo: TeaInfo) {
-        self.viewModel = TeaAboutViewModel(teaInfo: teaInfo)
+        let teaAboutViewModel = TeaAboutViewModel(teaInfo: teaInfo)
+        self._viewModel = StateObject(wrappedValue: teaAboutViewModel)
     }
     var body: some View {
         

@@ -11,7 +11,7 @@ import SwiftUI
 @Observable
 class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
     
-    var brewingPhases: [TeaBrewingPhase] = TeaBrewingPhase.mockBrewingPhases
+    var brewingPhases: [TeaBrewingPhase]
     var totalDuration: TimeInterval
     
     var selectedPhase: TeaBrewingPhase {
@@ -30,10 +30,11 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
         return areButtonsDisabled(isNext: false)
     }
        
-    init() {
+    init(brewingPhases: [TeaBrewingPhase]) {
         self.totalDuration = 0
+        self.brewingPhases = brewingPhases
         super.init(state: .init(selectedPhaseId: nil, duration: 0, isTimerActive: false, isGuideShowing: true, guidePages: []))
-        let brewingPhase = brewingPhases.first!
+        let brewingPhase = brewingPhases.first ?? .init(phaseName: "Empty", phaseDescription: "", phaseDuration: 0, shouldShowTick: false, guidePages: [])
         self.totalDuration = brewingPhase.phaseDuration
         let state = TeaBrewingFeature.State(selectedPhase: brewingPhase)
         self.state = state
@@ -137,4 +138,7 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
         state.isGuideShowing = false
         didCompleteGuide()
     }
+    
+    //MARK: OS optimization
+    
 }

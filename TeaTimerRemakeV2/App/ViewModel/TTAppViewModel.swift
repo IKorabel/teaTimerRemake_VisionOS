@@ -25,8 +25,12 @@ class TTAppViewModel: TTAppFeature.viewModel {
     func openTeaInformationWindowInClick(selectedTea: Tea, openWindowAction: OpenWindowAction) {
         showSelectedTeaInformation(selectedTea: selectedTea)
         if !state.didOpenTeaInfoView {
-            openWindowAction(id: WindowsConstants.teaInfoWindow)
-            state.didOpenTeaInfoView = true
+            if isVisionOS {
+                openWindowAction(id: WindowsConstants.teaInfoWindow)
+                state.didOpenTeaInfoView = true
+            } else {
+                state.didPresentTeaInfoSheet = true
+            }
         }
     }
     

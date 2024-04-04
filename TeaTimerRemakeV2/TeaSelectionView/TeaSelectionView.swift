@@ -8,35 +8,38 @@
 import SwiftUI
 
 struct TeaSelectionView: View {
-    @StateObject var viewModel: TeaSelectionViewModel
+    
+    @Environment(TTAppViewModel.self) private var navViewModel
+    @StateObject private var viewModel: TeaSelectionViewModel
+    
     @Environment(\.openWindow) private var openWindow
     @Environment(\.dismissWindow) private var dismissWindow
     
+    init(viewModel: TeaSelectionViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-        TabView {
-            ForEach(viewModel.teaList) { actualTeaPage in
-                TeaSelectionCardView(tea: actualTeaPage) { action in
-                    print("new page id: \(actualTeaPage.id)")
-                    viewModel.handleViewAction(.didScrollTeaPage(newTeaPageId: actualTeaPage.id))
-                    switch action {
-                    case .readAboutTea:
-                         viewModel.handleViewAction(.didClickOnInfoButton)
-                    case .brewTea: print("brew tea")
-                    case .addTeaToList: print("add to list")
-                    }
-                }
-                .tabItem {
-                    Label(
-                        title: { Text(actualTeaPage.name) },
-                        icon: {
-                            Image(systemName: "leaf.fill")
-                                .foregroundStyle(actualTeaPage.bgColor)
+        NavigationStack {
+            TabView {
+                ForEach(viewModel.teaList) { actualTeaPage in
+                    TeaSelectionCardView(tea: actualTeaPage)
+                        .tabItem {
+                            Label(
+                                title: { Text(actualTeaPage.name) },
+                                icon: {
+                                    Image(systemName: "leaf.fill")
+                                        .foregroundStyle(actualTeaPage.bgColor)
+                                }
+                            )
                         }
-                    )
+                        .tag(actualTeaPage.id)
+                        .environment(viewModel)
+                        .ignoresSafeArea()
                 }
-                .tag(actualTeaPage.id)
-                .ignoresSafeArea()
             }
+            .toolbar(.hidden)
+            .toolbarBackground(Color.black)
         }
         .ignoresSafeArea()
         .tabViewStyle(.page(indexDisplayMode: .always))

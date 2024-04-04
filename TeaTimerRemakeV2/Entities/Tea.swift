@@ -12,18 +12,20 @@ struct Tea: Identifiable {
     var name: String
     var bgColor: Color
     var teaInformation: TeaInfo
+    var brewingWays: [TeaBrewingWay]
     
     init(tea: TeaKind) {
         self.name = tea.tea.name
         self.teaInformation = tea.tea.teaInformation
         self.bgColor = tea.tea.bgColor
+        self.brewingWays = tea.brewingWays
     }
     
-    internal init(id: UUID = UUID(), name: String, bgColor: Color, teaInformation: TeaInfo) {
-        self.id = id
+    internal init(name: String, bgColor: Color, teaInformation: TeaInfo, brewingWays: [TeaBrewingWay]) {
         self.name = name
         self.bgColor = bgColor
         self.teaInformation = teaInformation
+        self.brewingWays = brewingWays
     }
     
     
@@ -34,6 +36,17 @@ extension Tea {
     
     enum TeaKind {
         case shuPuerh, shengPuerh
+        
+        var brewingWays: [TeaBrewingWay] {
+            switch self {
+            case .shuPuerh:
+                return [TeaBrewingWay(brewingMode: .ceremony, brewingModesWithPhases: TeaBrewingPhase.mockBrewingPhases),
+                        TeaBrewingWay(brewingMode: .kettle, brewingModesWithPhases: TeaBrewingPhase.mockBrewingPhases)]
+            case .shengPuerh:
+                return [TeaBrewingWay(brewingMode: .ceremony, brewingModesWithPhases: TeaBrewingPhase.mockBrewingPhases),
+                        TeaBrewingWay(brewingMode: .kettle, brewingModesWithPhases: TeaBrewingPhase.mockBrewingPhases)]
+            }
+        }
         
         var tea: Tea {
             switch self {
@@ -56,7 +69,7 @@ extension Tea {
                                       .init(name: "Removes toxins", iconName: "pill.fill")
                                   ])],
                                     teaBrewingPhases: TeaBrewingPhase.mockBrewingPhases
-                                   ))
+                                                ), brewingWays: brewingWays)
             case .shengPuerh:
                 return Tea(name: "Sheng Puerh", bgColor: .ttGreen,
                            teaInformation: .init(teaName: "Sheng Puerh", teaImageName: "",
@@ -76,7 +89,7 @@ extension Tea {
                                       .init(name: "Removes toxins", iconName: "pill.fill")
                                   ])],
                                     teaBrewingPhases: TeaBrewingPhase.mockBrewingPhases
-                                   ))
+                                                ), brewingWays: brewingWays)
             }
         }
     }

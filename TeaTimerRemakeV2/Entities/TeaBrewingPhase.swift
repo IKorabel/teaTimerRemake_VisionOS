@@ -7,7 +7,32 @@
 
 import Foundation
 
-struct TeaBrewingPhase: Identifiable, Codable {
+
+struct TeaBrewingWay: Identifiable, Hashable, Codable {
+    var id: UUID = UUID()
+    var brewingMode: BrewingMode
+    var brewingModesWithPhases: [TeaBrewingPhase]
+    
+    static func == (lhs: TeaBrewingWay, rhs: TeaBrewingWay) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+           return hasher.combine(id)
+    }
+
+}
+
+struct TeaBrewingPhase: Identifiable, Hashable, Equatable, Codable {
+    
+    static func == (lhs: TeaBrewingPhase, rhs: TeaBrewingPhase) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     var id: UUID = UUID()
     var phaseName: String
     var phaseDescription: String

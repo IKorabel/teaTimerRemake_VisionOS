@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+
 struct TeaSelectionCardView: View {
     @Environment(TTAppViewModel.self) private var navViewModel
+    
+    @Environment(TeaSelectionViewModel.self) private var teaSelectionViewModel
+    
+    @Environment(\.openWindow) private var openWindow
     
     var tea: Tea
     
@@ -19,7 +24,6 @@ struct TeaSelectionCardView: View {
            return false
         #endif
     }
-    var teaSelectionCardViewAction: (TeaSelectionViewFeature.CallbackAction) -> Void
     
     var body: some View {
         teaInfo()
@@ -27,7 +31,6 @@ struct TeaSelectionCardView: View {
     
     
     @ViewBuilder private func teaInfo() -> some View {
-        NavigationStack {
             ZStack {
                 VideoPlayerView(url: "puerhTeaVideo")
                 VStack(alignment: .leading, spacing: 10) {
@@ -38,46 +41,61 @@ struct TeaSelectionCardView: View {
                         .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                     teaInteractionButtons()
                 }
+                .ignoresSafeArea()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.bottom, 70)
                 .padding(.leading, 20)
-            }
         }
-        .toolbar(.hidden)
     }
     
     @ViewBuilder private func teaInteractionButtons() -> some View {
         if isVisionOs {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 10) {
-                    Button(action: { teaSelectionCardViewAction(.addTeaToList)}, label: {
+                    Button(action: {
+                        print("add to your list")
+                    }, label: {
                         Label("Add to your list", systemImage: "plus.circle.fill")
                             .foregroundStyle(Color.white)
                     })
                     .buttonBorderShape(.capsule)
                     .buttonStyle(.bordered)
                     
-                    Button(action: { teaSelectionCardViewAction(.readAboutTea)}, label: {
+                    Button(action: {
+                        navViewModel.openTeaInformationWindowInClick(selectedTea: tea, openWindowAction: openWindow)
+                    }, label: {
                         Label("About", systemImage: "info.circle.fill")
                     })
                 }
-                NavigationLink(value: "") {
+                
+                Button(action: {
+                    openWindow(id: WindowsConstants.brewingTimerWindow, value: tea.brewingWays)
+                }, label: {
                     Label("Brew a tea", systemImage: "flame.fill")
-                }
+                })
+
             }
         } else {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 10) {
                     TTStyleButton(title: "Add to your list", systemImage: "plus.circle.fill", backgroundColor: .blue) {
-                        teaSelectionCardViewAction(.addTeaToList)
+                      // add to list (iOS)
                     }
                     TTStyleButton(title: "About", systemImage: "info.circle.fill", backgroundColor: .purple) {
-                        teaSelectionCardViewAction(.readAboutTea)
+                        print("read about")
+                        teaSelectionViewModel.handleViewAction(.didClickOnInfoButton)
+                        // navViewModel.openTeaInformationWindowInClick(selectedTea: tea, openWindowAction: openWindow)
                     }
                 }
-                TTStyleButton(title: "Brew a tea", systemImage: "info", backgroundColor: .ttGreen) {
-                    teaSelectionCardViewAction(.brewTea)
+                
+                NavigationLink {
+                    let teaPrebrewingSettingsViewModel = TeaPrebrewingSettingsViewModel(teaBrewingWays: tea.brewingWays)
+                    TeaPrebrewingSettingsView(viewModel: teaPrebrewingSettingsViewModel)
+                } label: {
+                    Label("Brew a tea", systemImage: "info")
                 }
+                .buttonStyle(TTButton(backgroundColor: .ttGreen))
+                
             }
         }
     }
@@ -87,18 +105,10 @@ struct TeaSelectionCardView: View {
             action()
         }
         .buttonStyle(TTButton(backgroundColor: backgroundColor))
+        
     }
 }
 
 #Preview {
-    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green, teaInformation: .init(teaName: "tea", teaImageName: "", teaProperties: [], teaBrewingPhases: []))) { action in
-        switch action {
-        case .addTeaToList:
-            print("add")
-        case .readAboutTea:
-            print("read")
-        case .brewTea:
-            print("brew")
-        }
-    }
+    TeaSelectionCardView(tea: .init(name: "tea", bgColor: .green, teaInformation: .init(teaName: "tea", teaImageName: "", teaProperties: [], teaBrewingPhases: []), brewingWays: []))
 }

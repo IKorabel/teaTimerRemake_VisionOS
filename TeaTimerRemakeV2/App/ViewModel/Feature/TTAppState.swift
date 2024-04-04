@@ -12,5 +12,6 @@ extension TTAppFeature {
     struct State {
         var selectedTea: Tea = .init(tea: .shuPuerh)
         var didOpenTeaInfoView: Bool = false
+        var didPresentTeaInfoSheet: Bool = false
     }
 }

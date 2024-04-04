@@ -72,6 +72,6 @@ struct TeaGuideView: View {
 }
 
 #Preview {
-    TeaBrewingTimerView(viewModel: .init())
+    TeaBrewingTimerView(viewModel: .init(brewingPhases: []))
 }
 

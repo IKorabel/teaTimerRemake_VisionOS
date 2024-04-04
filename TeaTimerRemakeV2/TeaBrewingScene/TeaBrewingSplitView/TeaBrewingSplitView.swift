@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeaBrewingSplitView: View {
     
-    @StateObject private var teaBrewingViewModel = TeaBrewingViewModel()
+    @StateObject private var teaBrewingViewModel = TeaBrewingViewModel(brewingPhases: [])
     
     var body: some View {
            teaBrewingGuideWithTimerView()

@@ -19,7 +19,7 @@ struct TeaTimerRemakeV2App: App {
             TeaSelectionSplitView(viewModel: .init(state: .init()))
                 .environment(appNavigationViewModel)
             #else
-            TeaSelectionView(envViewModel: .init(state: .init()))
+            TeaSelectionView(viewModel: .init(state: .init()))
                 .environment(appNavigationViewModel)
             #endif
         }
@@ -30,6 +30,11 @@ struct TeaTimerRemakeV2App: App {
         }
         .immersionStyle(selection: .constant(.mixed), in: .mixed)
         
+        ImmersiveSpace(id: WindowsConstants.immersiveTeaBrewingSpace) {
+            ImmersiveTeaBrewingView()
+        }
+        .immersionStyle(selection: .constant(.mixed), in: .mixed)
+        
         WindowGroup(id: WindowsConstants.teaInfoWindow) {
             TeaAboutView(teaInfo: .init(teaName: "", teaImageName: "", teaProperties: [], teaBrewingPhases: []))
                 .environment(appNavigationViewModel)
@@ -37,12 +42,10 @@ struct TeaTimerRemakeV2App: App {
         .defaultSize(width: 500, height: 800)
         #endif
         
-        WindowGroup(id: WindowsConstants.brewingTimerWindow) {
-            TeaBrewingTimerView(viewModel: .init())
+        WindowGroup(id: WindowsConstants.brewingTimerWindow, for: [TeaBrewingWay].self) { $value in
+            let viewModel = TeaPrebrewingSettingsViewModel(teaBrewingWays: value!)
+            TeaPrebrewingSettingsView(viewModel: viewModel)
         }
         
-//        WindowGroup(id: WindowsConstants.brewingGuideWindow) {
-//            TeaGuideView()
-//        }
     }
 }

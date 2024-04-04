@@ -7,14 +7,7 @@
 
 import Foundation
 
-struct TeaPrebrewingSettings {
-    var brewingMode: TeaBrewingMode
-}
-
-struct TeaBrewingMode: Identifiable {
-    let id = UUID()
-    let brewingMode: BrewingMode
-    
-    static let allBrewingModes: [TeaBrewingMode] = [.init(brewingMode: .ceremony), .init(brewingMode: .kettle), .init(brewingMode: .teaBag)]
-    
-}
+//struct TeaPrebrewingSettings: Identifiable {
+//    var id = UUID()
+//    var brewingMode: BrewingMode
+//}

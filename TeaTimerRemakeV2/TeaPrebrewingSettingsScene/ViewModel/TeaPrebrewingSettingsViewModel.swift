@@ -10,11 +10,12 @@ import Foundation
 @Observable
 class TeaPrebrewingSettingsViewModel: TeaPrebrewingSettingsFeature.viewModel {
     
-    var settingOptions: [TeaBrewingMode] = TeaBrewingMode.allBrewingModes
+    var teaBrewingWays: [TeaBrewingWay]
     
-    init() {
+    init(teaBrewingWays: [TeaBrewingWay]) {
+        self.teaBrewingWays = teaBrewingWays
         super.init(state: .init())
-        state.selectedOptionId = settingOptions.first(where: {$0.brewingMode == .ceremony})?.id
+        state.selectedOptionId = teaBrewingWays.first(where: {$0.brewingMode == .ceremony})?.id
     }
     
     override func handleViewAction(_ action: TeaPrebrewingSettingsFeature.ViewAction) {
@@ -24,12 +25,21 @@ class TeaPrebrewingSettingsViewModel: TeaPrebrewingSettingsFeature.viewModel {
         }
     }
     
-    func isOptionSelected(settingsOption: TeaBrewingMode) -> Bool {
+    func getSettingsOptions() {
+        
+    }
+    
+    func isOptionSelected(settingsOption: TeaBrewingWay) -> Bool {
         guard let selectedOptionId = state.selectedOptionId else { return false }
         return settingsOption.id == selectedOptionId
     }
     
-    private func selectOption(selectedOptionId: TeaBrewingMode.ID) {
+    func getSelectedOption() -> [TeaBrewingPhase] {
+        let selectedOption = teaBrewingWays.first(where: {$0.id == state.selectedOptionId})
+        return selectedOption!.brewingModesWithPhases
+    }
+    
+    private func selectOption(selectedOptionId: TeaBrewingWay.ID) {
         self.state.selectedOptionId = selectedOptionId
     }
 }

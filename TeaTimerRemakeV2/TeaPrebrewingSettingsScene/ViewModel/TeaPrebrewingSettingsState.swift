@@ -10,7 +10,7 @@ import Foundation
 extension TeaPrebrewingSettingsFeature {
     
     struct State {
-        var selectedOptionId: TeaBrewingMode.ID?
+        var selectedOptionId: TeaBrewingWay.ID?
     }
     
 }

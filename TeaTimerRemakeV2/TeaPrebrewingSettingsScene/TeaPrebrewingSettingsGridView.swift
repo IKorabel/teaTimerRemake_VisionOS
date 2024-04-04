@@ -11,7 +11,7 @@ import Foundation
 struct PrebrewingSettingsGridView: View {
     @Environment(TeaPrebrewingSettingsViewModel.self) private var viewModel
     
-    let teaSettingsOption: TeaBrewingMode
+    let teaSettingsOption: TeaBrewingWay
     
     var isSelected: Bool = false
     
@@ -93,7 +93,7 @@ struct PrebrewingSettingsGridView: View {
 }
 
 #Preview {
-    PrebrewingSettingsGridView(teaSettingsOption: TeaBrewingMode(brewingMode: .ceremony))
+    PrebrewingSettingsGridView(teaSettingsOption: .init(brewingMode: .ceremony, brewingModesWithPhases: []))
 }
 
 

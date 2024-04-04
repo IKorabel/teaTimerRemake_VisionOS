@@ -22,6 +22,8 @@ extension TeaBrewingFeature {
         //Presentation
         var isGuideShowing: Bool = true
         var guidePageForSelectedBrewingPhase: [TeaBrewingGuidePage]
+    
+        var isGuideSheetPresented: Bool = true
         
         init(selectedPhaseId: TeaBrewingPhase.ID?, duration: TimeInterval, isTimerActive: Bool, isGuideShowing: Bool, guidePages: [TeaBrewingGuidePage]) {
             self.remainingTime = duration
