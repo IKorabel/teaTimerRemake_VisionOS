@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Radiant_Painting_equirectangular-png_chinese_village_near_with_1307249551_10582951.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

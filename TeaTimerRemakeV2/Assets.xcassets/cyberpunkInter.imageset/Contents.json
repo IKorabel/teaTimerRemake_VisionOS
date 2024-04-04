@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Cyberpunk_equirectangular-png_Chinese_yberpunk_tea_house_740965603_10582928.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
