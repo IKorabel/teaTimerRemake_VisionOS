@@ -18,13 +18,25 @@ struct TeaGuideView: View {
     }
     
     var body: some View {
-        VStack {
+        NavigationStack {
             TabView(selection: $viewModel.state.selectedGuidePageTabIndex) {
                 ForEach(Array(viewModel.guidePages.enumerated()), id: \.offset) { index, guidePage in
                     buildTeaGuideViewPage(guidePage: guidePage)
                         .tag(index)
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Brewing guide")
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Text("Close")
+                    })
+                    .foregroundStyle(Color.ttGreen)
+                }
+            })
         }
         .onChange(of: envViewModel.state.selectedPhaseId, { oldValue, newValue in
             viewModel.handleViewAction(.didChangeBrewingPhase(envViewMode: envViewModel))
@@ -39,14 +51,15 @@ struct TeaGuideView: View {
     private func buildTeaGuideViewPage(guidePage: TeaBrewingGuidePage) -> some View {
         VStack(spacing: 20) {
             Image(systemName: guidePage.symbol)
+                .resizable()
+                .scaledToFit()
                 .foregroundStyle(Color.ttGreen)
-                .font(.system(size: 100))
+                .frame(width: 100, height: 100)
             Text(guidePage.name)
-                .font(.largeTitle)
+                .font(.title)
                 .bold()
                 .multilineTextAlignment(.center)
             Text(guidePage.description)
-                .font(.title)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
             teaGuideViewPageButtons()
@@ -66,6 +79,8 @@ struct TeaGuideView: View {
                     viewModel.handleViewAction(.didClickOnDoneButton)
                 }
             })
+            .buttonStyle(!viewModel.isVisionOS ? .borderedProminent : .init())
+            .buttonBorderShape(!viewModel.isVisionOS ? .roundedRectangle : .automatic)
             .tint(Color.ttGreen)
         }
     }

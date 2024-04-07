@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TeaSelectionVisionProViewModel: TeaSelectionViewModel {
+class TeaSelectionVisionProViewModel: TeaSelectionViewFeature.ViewModelType  {
     
     var allTeas: [Tea] = Tea.teaList
     

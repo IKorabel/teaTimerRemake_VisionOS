@@ -36,6 +36,8 @@
 		A23B55552BA70C2A00BDB055 /* TeaBrewingPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55542BA70C2A00BDB055 /* TeaBrewingPhase.swift */; };
 		A23B55572BA7191800BDB055 /* TeaBrewingTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55562BA7191800BDB055 /* TeaBrewingTimerViewModel.swift */; };
 		A23B55592BA71A8100BDB055 /* TeaBrewingTimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23B55582BA71A8100BDB055 /* TeaBrewingTimerFeature.swift */; };
+		A28856F12BC2DA13006D9134 /* ButtonModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28856F02BC2DA13006D9134 /* ButtonModifiers.swift */; };
+		A28856F32BC2E455006D9134 /* TeaWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28856F22BC2E455006D9134 /* TeaWave.swift */; };
 		A2ADD7882B9A161D008AE12E /* TeaTimerRemakeV2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */; };
 		A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD7892B9A161D008AE12E /* ContentView.swift */; };
 		A2ADD78C2B9A161D008AE12E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADD78B2B9A161D008AE12E /* Item.swift */; };
@@ -96,6 +98,8 @@
 		A23B55542BA70C2A00BDB055 /* TeaBrewingPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingPhase.swift; sourceTree = "<group>"; };
 		A23B55562BA7191800BDB055 /* TeaBrewingTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingTimerViewModel.swift; sourceTree = "<group>"; };
 		A23B55582BA71A8100BDB055 /* TeaBrewingTimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBrewingTimerFeature.swift; sourceTree = "<group>"; };
+		A28856F02BC2DA13006D9134 /* ButtonModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifiers.swift; sourceTree = "<group>"; };
+		A28856F22BC2E455006D9134 /* TeaWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaWave.swift; sourceTree = "<group>"; };
 		A2ADD7842B9A161D008AE12E /* TeaTimerRemakeV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeaTimerRemakeV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2ADD7872B9A161D008AE12E /* TeaTimerRemakeV2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaTimerRemakeV2App.swift; sourceTree = "<group>"; };
 		A2ADD7892B9A161D008AE12E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				A222A8152BBB400F004AA016 /* BlurRadiusModifier.swift */,
+				A28856F02BC2DA13006D9134 /* ButtonModifiers.swift */,
 			);
 			path = Modfiiers;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A237F3B72BA0CE5A0095E2C2 /* CircularProgressView.swift */,
+				A28856F22BC2E455006D9134 /* TeaWave.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				A222A8162BBB400F004AA016 /* BlurRadiusModifier.swift in Sources */,
 				A2ADD7CB2B9F89AE008AE12E /* TeaSelectionVisionProViewModel.swift in Sources */,
 				A2020C412BB5CC83009C4144 /* TeaBrewingMode.swift in Sources */,
+				A28856F32BC2E455006D9134 /* TeaWave.swift in Sources */,
 				A2ADD7BD2B9E233E008AE12E /* TeaAboutViewModel.swift in Sources */,
 				A2020C2B2BAF48C3009C4144 /* TTAppFeature.swift in Sources */,
 				A2ADD78A2B9A161D008AE12E /* ContentView.swift in Sources */,
@@ -560,6 +567,7 @@
 				A23B55592BA71A8100BDB055 /* TeaBrewingTimerFeature.swift in Sources */,
 				A2ADD7B82B9B552B008AE12E /* TeaAboutView.swift in Sources */,
 				A23B55512BA7050800BDB055 /* TeaBrewingViewModel.swift in Sources */,
+				A28856F12BC2DA13006D9134 /* ButtonModifiers.swift in Sources */,
 				A2ADD7A22B9A1893008AE12E /* TeaSelectionView-ViewModelFeature.swift in Sources */,
 				A23B554F2BA704B100BDB055 /* TeaBrewingFeature.swift in Sources */,
 				A2020C2F2BAF491D009C4144 /* TTAppAction.swift in Sources */,

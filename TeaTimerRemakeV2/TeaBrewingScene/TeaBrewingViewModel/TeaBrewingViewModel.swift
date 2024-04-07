@@ -22,6 +22,10 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
         return selectedPhase.guidePages
     }
     
+    var isPlayStopButtonEnabled: Bool {
+        return !state.isGuideShowing && !state.isGuideSheetPresented
+    }
+    
     var isGoNextButtonEnabled: Bool {
         return areButtonsDisabled(isNext: true)
     }
@@ -60,6 +64,11 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
         let selectedPhase = selectedPhase
         return selectedPhase.guidePages
     }
+    
+//    private func countPercent() {
+//        let percent = 1.0 - (timeRemaining / totalDuration)
+//        self.percent = max(0, min(100, percent * 100))
+//    }
     
     func selectedBrewingPhase() -> TeaBrewingPhase? {
         let selectedBrewingPhase = brewingPhases.first(where: {$0.id == state.selectedPhaseId})
@@ -135,7 +144,11 @@ class TeaBrewingViewModel: TeaBrewingFeature.viewModel {
     }
     
     func dismissGuidePage() {
-        state.isGuideShowing = false
+        if isVisionOS {
+            state.isGuideShowing = false
+        } else {
+            state.isGuideSheetPresented = false
+        }
         didCompleteGuide()
     }
     

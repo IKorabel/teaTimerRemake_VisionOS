@@ -79,8 +79,9 @@ struct PrebrewingSettingsGridView: View {
         Button(action: {
             viewModel.handleViewAction(.didSelectOption(optionId: teaSettingsOption.id))
         }, label: {
-            Label("Favorite", systemImage: isSelected ? "checkmark.circle.fill" : "circle")
+            Label("Select", systemImage: isSelected ? "checkmark.circle.fill" : "circle")
                 .contentTransition(.symbolEffect)
+                .foregroundStyle(!isVisionOS && isSelected ? Color.ttGreen : .primary)
                 .font(.title)
             .padding(8)
             .background(in: .circle)

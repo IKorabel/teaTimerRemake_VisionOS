@@ -53,7 +53,7 @@ struct TeaPrebrewingSettingsView: View {
         } label: {
             Text("Start brewing")
         }
-        .buttonStyle(.bordered)
+        .buttonStyle(TTButton(backgroundColor: .ttGreen))
 
     }
     
@@ -61,6 +61,6 @@ struct TeaPrebrewingSettingsView: View {
 
 
 #Preview {
-    TeaPrebrewingSettingsView(viewModel: .init(teaBrewingWays: []))
+    TeaPrebrewingSettingsView(viewModel: .init(teaBrewingWays: [.init(brewingMode: .ceremony, brewingModesWithPhases: []), .init(brewingMode: .kettle, brewingModesWithPhases: [])]))
 }
 

@@ -11,7 +11,9 @@ import SwiftUI
 struct TeaSelectionCardView: View {
     @Environment(TTAppViewModel.self) private var navViewModel
     
+    #if os(iOS)
     @Environment(TeaSelectionViewModel.self) private var teaSelectionViewModel
+    #endif
     
     @Environment(\.openWindow) private var openWindow
     
@@ -83,8 +85,9 @@ struct TeaSelectionCardView: View {
                     }
                     TTStyleButton(title: "About", systemImage: "info.circle.fill", backgroundColor: .purple) {
                         print("read about")
+                        #if os(iOS)
                         teaSelectionViewModel.handleViewAction(.didClickOnInfoButton)
-                        // navViewModel.openTeaInformationWindowInClick(selectedTea: tea, openWindowAction: openWindow)
+                        #endif
                     }
                 }
                 

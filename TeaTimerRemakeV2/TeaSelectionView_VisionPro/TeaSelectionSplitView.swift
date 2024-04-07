@@ -18,8 +18,11 @@ struct TeaSelectionSplitView: View {
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     #endif
     
-    @State private var navigateToBrewingTimer: Bool = false
     
+    init(viewModel: TeaSelectionVisionProViewModel) {
+        let viewModel = viewModel
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     var body: some View {
         NavigationSplitView {
             List(viewModel.allTeas, selection: $viewModel.state.selectedIndex) { tea in
@@ -41,14 +44,13 @@ struct TeaSelectionSplitView: View {
             viewModel.state.isTeaInfoSheetPresented = false
         }, content: {
             TeaAboutView(teaInfo: viewModel.defineSelectedTea().teaInformation)
+                .environment(navViewModel)
         })
         
     }
     
     private func listCell(tea: Tea) -> some View {
-        Label(title: { Text(tea.name) },
-              icon: {
-            Image(systemName: "leaf.fill").foregroundStyle(tea.bgColor) })
+        Label(title: { Text(tea.name) }, icon: { Image(systemName: "leaf.fill").foregroundStyle(tea.bgColor) })
     }
 
 }
